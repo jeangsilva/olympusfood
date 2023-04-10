@@ -1,3 +1,4 @@
+import 'package:olympusfood/screens/navigation.dart';
 import 'package:page_indicator/page_indicator.dart';
 import 'package:flutter/material.dart';
 
@@ -45,11 +46,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return MaterialApp(
       theme: isDarkModeEnabled ? darkTheme : lightTheme,
       home: Scaffold(
+        bottomNavigationBar: Navigation(),
         backgroundColor: isDarkModeEnabled ? Colors.grey[800] : Colors.white,
         body: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
               Container(
                 height: 200,
                 decoration: BoxDecoration(
@@ -125,8 +127,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   });
                 },
                 child: Container(
-                  height: 30,
-                  width: 150,
+                  margin: EdgeInsets.symmetric(horizontal: 55, vertical: 10),
+                  height: 40,
+                  width: 120,
                   decoration: BoxDecoration(
                     color: Colors.grey[400],
                     borderRadius: BorderRadius.circular(20),
@@ -202,34 +205,123 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               SizedBox(height: 16),
-              Expanded(
-                child: Container(
-                  height: 100, // altere o valor da altura para o desejado
-                  child: PageIndicatorContainer(
-                    length: _images.length,
-                    align: IndicatorAlign.bottom,
-                    indicatorColor: Colors.grey,
-                    indicatorSelectorColor: Colors.green,
-                    child: PageView(
-                      controller: _pageController,
-                      children: _images.map((imageUrl) {
-                        return Container(
-                          width: double.infinity,
-                          height:
-                              100, // altere o valor da altura para o desejado
-                          child: Image.network(
-                            imageUrl,
-                            fit: BoxFit.cover,
-                          ),
-                        );
-                      }).toList(),
-                    ),
+              Container(
+                height: 150, // altere o valor da altura para o desejado
+                margin:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                child: PageIndicatorContainer(
+                  length: _images.length,
+                  align: IndicatorAlign.bottom,
+                  indicatorColor: Colors.grey,
+                  indicatorSelectorColor: Colors.green,
+                  child: PageView(
+                    controller: _pageController,
+                    children: _images.map((imageUrl) {
+                      return Container(
+                        width: double.infinity,
+                        height: 100, // altere o valor da altura para o desejado
+                        child: Image.network(
+                          imageUrl,
+                          fit: BoxFit.cover,
+                        ),
+                      );
+                    }).toList(),
                   ),
                 ),
               ),
-            ],
-          ),
-        ),
+              SizedBox(height: 10),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+                Column(children: [
+                  CircleAvatar(
+                      backgroundColor: Color(0xFF49B417),
+                      child: Icon(Icons.abc_outlined)),
+                  Text("Cardápio")
+                ]),
+                Column(children: [
+                  CircleAvatar(
+                      backgroundColor: Color(0xFF49B417),
+                      child: Icon(Icons.abc_outlined)),
+                  Text("Histórico")
+                ]),
+                Column(children: [
+                  CircleAvatar(
+                      backgroundColor: Color(0xFF49B417),
+                      child: Icon(Icons.abc_outlined)),
+                  Text("Favoritos")
+                ]),
+              ]),
+              SizedBox(height: 10),
+              Container(
+                  margin: EdgeInsets.symmetric(horizontal: 16),
+                  height: 200,
+                  child: Column(children: [
+                    Row(children: [
+                      Padding(
+                        padding: EdgeInsets.all(15),
+                        child: Text(
+                          "Carteira Digital",
+                          style: TextStyle(
+                              color: Colors.green,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w600),
+                          textAlign: TextAlign.start,
+                        ),
+                      )
+                    ]),
+
+                    //  Column(
+                    //         mainAxisAlignment: MainAxisAlignment.start,
+                    //         crossAxisAlignment: CrossAxisAlignment.start,
+                    //         children: [
+                    //           Text("******")
+                    //         ],
+                    //       ))
+                    Row(children: [
+                      Padding(
+                          padding: EdgeInsets.all(10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Carteira Digital",
+                                style: TextStyle(
+                                    color: Colors.green,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500),
+                                textAlign: TextAlign.start,
+                              ),
+                              Text("******")
+                            ],
+                          ))
+                    ]),
+                    Row(children: [
+                      Padding(
+                          padding: EdgeInsets.all(10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Carteira Digital",
+                                style: TextStyle(
+                                    color: Colors.green,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500),
+                                textAlign: TextAlign.start,
+                              ),
+                              Text("******")
+                            ],
+                          ))
+                    ]),
+                  ]),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 197, 191, 191),
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(30),
+                        topRight: Radius.circular(30),
+                        bottomLeft: Radius.circular(30),
+                        bottomRight: Radius.circular(30)),
+                  ))
+            ])),
       ),
     );
   }
