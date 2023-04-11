@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:olympusfood/screens/home_screen.dart';
-import 'screens/login_screen.dart';
 
 class LoadingScreen extends StatefulWidget {
+  const LoadingScreen({super.key});
+
   @override
   _LoadingScreenState createState() => _LoadingScreenState();
 }
@@ -52,7 +53,7 @@ class _LoadingScreenState extends State<LoadingScreen>
             'assets/logo.png',
             height: 300,
           ),
-          SizedBox(height: 100),
+          const SizedBox(height: 100),
           AnimatedBuilder(
             animation: _animationController,
             builder: (BuildContext context, Widget? child) {
@@ -60,16 +61,16 @@ class _LoadingScreenState extends State<LoadingScreen>
                 width: 200,
                 child: LinearProgressIndicator(
                   value: _animation.value,
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
+                  valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFF49B417)),
                   backgroundColor: Colors.grey.shade300,
                 ),
               );
             },
           ),
-          SizedBox(height: 200),
+          const SizedBox(height: 200),
           Container(
             alignment: Alignment.center,
-            child: Text(
+            child: const Text(
               'Olympus Food',
               style: TextStyle(
                 fontSize: 14,

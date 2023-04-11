@@ -49,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
         bottomNavigationBar: const Navigation(),
         backgroundColor: isDarkModeEnabled ? Colors.grey[800] : Colors.white,
         body: SafeArea(
+          child:SingleChildScrollView(
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -74,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
+                          children: const [
                             Text(
                               'Nº da matrícula',
                               style: TextStyle(
@@ -126,7 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   });
                 },
                 child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 55, vertical: 10),
+                  margin: const EdgeInsets.symmetric(horizontal: 55, vertical: 10),
                   height: 30,
                   width: 120,
                   decoration: BoxDecoration(
@@ -146,16 +147,16 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Container(
                             decoration: BoxDecoration(
                               color: isAlunoSelected
-                                  ? Color(0xFF49B417)
+                                  ? const Color(0xFF49B417)
                                   : Colors.grey[400],
-                              borderRadius: BorderRadius.only(
+                              borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(20),
                                 bottomLeft: Radius.circular(20),
                               ),
                             ),
                             child: Center(
                               child: Text(
-                                'Aluno',
+                                'ESTUDANTE',
                                 style: TextStyle(
                                   color: isAlunoSelected
                                       ? Colors.white
@@ -178,7 +179,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Container(
                             decoration: BoxDecoration(
                               color: isAlunoSelected
-                                  ? Colors.grey[400]
+                                  ? Color.fromRGBO(156, 156, 156, 1)
                                   : const Color(0xFF49B417),
                               borderRadius: BorderRadius.only(
                                 topRight: Radius.circular(20),
@@ -187,7 +188,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             child: Center(
                               child: Text(
-                                'Responsável',
+                                'RESPONSÁVEL',
                                 style: TextStyle(
                                   color: isAlunoSelected
                                       ? Colors.black
@@ -229,27 +230,29 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
+              //icones do centro
               const SizedBox(height: 10),
               Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
                 Column(children: const [
                   CircleAvatar(
                       backgroundColor: Color(0xFF49B417),
-                      child: Icon(Icons.abc_outlined, color: Colors.white)),
+                      child: Icon(Icons.menu_book_outlined, color: Colors.white)),
                   Text("Cardápio")
                 ]),
                 Column(children: const [
                   CircleAvatar(
                       backgroundColor: Color(0xFF49B417),
-                      child: Icon(Icons.abc_outlined, color: Colors.white),),
+                      child: Icon(Icons.history_outlined, color: Colors.white),),
                   Text("Histórico")
                 ]),
                 Column(children: const [
                   CircleAvatar(
                       backgroundColor: Color(0xFF49B417),
-                      child: Icon(Icons.abc_outlined, color: Colors.white)),
+                      child: Icon(Icons.favorite_outlined, color: Colors.white)),
                   Text("Favoritos")
                 ]),
               ]),
+              //Carteira Digital
               const SizedBox(height: 10),
               Container(
                   margin: const EdgeInsets.symmetric(horizontal: 16),
@@ -268,14 +271,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       )
                     ]),
-
-                    //  Column(
-                    //         mainAxisAlignment: MainAxisAlignment.start,
-                    //         crossAxisAlignment: CrossAxisAlignment.start,
-                    //         children: [
-                    //           Text("******")
-                    //         ],
-                    //       ))
                     Row(children: [
                       Padding(
                           padding: EdgeInsets.all(10),
@@ -313,7 +308,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ))
                     ]),
                   ]),
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color.fromARGB(255, 197, 191, 191),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(30),
@@ -321,7 +316,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         bottomLeft: Radius.circular(30),
                         bottomRight: Radius.circular(30)),
                   ))
-            ])),
+            ])
+          ),
+        ),
       ),
       debugShowCheckedModeBanner: false,
     );
