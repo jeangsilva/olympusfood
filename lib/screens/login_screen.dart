@@ -20,7 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
     if (username == 'olympus' && password == 'food') {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (_) => HomeScreen(),
+          builder: (_) => const HomeScreen(),
         ),
       );
     } else {

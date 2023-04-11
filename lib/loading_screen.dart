@@ -31,7 +31,7 @@ class _LoadingScreenState extends State<LoadingScreen>
     _animationController.forward().then((value) {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (_) => HomeScreen(),
+          builder: (_) => const HomeScreen(), //trocar por LoginScreen
         ),
       );
     });
