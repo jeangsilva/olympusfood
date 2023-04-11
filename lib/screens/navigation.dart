@@ -20,28 +20,28 @@ class _NavigationState extends State<Navigation> {
         children: [
           IconButton(
               onPressed: () => Null,
-              icon: Icon(
+              icon: const Icon(
                 Icons.home_outlined,
                 size: 30,
               ),
               color: Colors.white),
           IconButton(
               onPressed: () => Null,
-              icon: Icon(
+              icon: const Icon(
                 Icons.list_alt,
                 size: 30,
               ),
               color: Colors.white),
           IconButton(
               onPressed: () => null,
-              icon: Icon(
+              icon: const Icon(
                 Icons.notifications,
                 size: 30,
               ),
               color: Colors.white),
           IconButton(
               onPressed: () => null,
-              icon: Icon(
+              icon: const Icon(
                 Icons.person_outline,
                 size: 30,
               ),

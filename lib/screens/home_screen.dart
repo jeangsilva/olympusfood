@@ -246,7 +246,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       child: const Icon(Icons.menu_book_outlined, size: 30),
                     ),
-                    const Text("Cardápio"),
+                    const Padding(
+                      padding: EdgeInsets.all(9.0),
+                      child: Text("CARDÁPIO"),
+                    ),
                   ],
                 ),
                 Column(
@@ -262,7 +265,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       child: const Icon(Icons.history_outlined, size: 30)
                     ),
-                    const Text("Histórico")
+                    const Padding(
+                      padding: EdgeInsets.all(9.0),
+                      child: Text("HISTÓRICO"),
+                    )
                   ],
                 ),
                 Column(
@@ -276,14 +282,17 @@ class _HomeScreenState extends State<HomeScreen> {
                         backgroundColor: const Color(0xFF49B417),
                         fixedSize: const Size(65,65)
                       ),
-                      child: const Icon(Icons.favorite_outlined, size: 30)
+                      child: const Icon(Icons.favorite_border_outlined, size: 30)
                     ),
-                    const Text("Favoritos")
+                    const Padding(
+                      padding: EdgeInsets.all(9.0),
+                      child: Text("FAVORITOS"),
+                    )
                   ],
                 )
               ]),
               //Carteira Digital
-              const SizedBox(height: 10),
+              const SizedBox(height: 15),
               Container(
                   margin: const EdgeInsets.symmetric(horizontal: 16),
                   height: 200,
@@ -311,19 +320,19 @@ class _HomeScreenState extends State<HomeScreen> {
                     ]),
                     Row(children: [
                       Padding(
-                          padding: EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(10),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: const [
                               Text(
-                                "Carteira Digital",
+                                "Saldo Disponível",
                                 style: TextStyle(
                                     color: Color(0xFF49B417),
                                     fontSize: 18,
                                     fontWeight: FontWeight.w500),
                                 textAlign: TextAlign.start,
                               ),
-                              Text("******")
+                              Text("R\$ 120,00")
                             ],
                           ))
                     ]),
@@ -334,18 +343,20 @@ class _HomeScreenState extends State<HomeScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: const [
                               Text(
-                                "Carteira Digital",
+                                "Limite Diário",
                                 style: TextStyle(
                                     color: Color(0xFF49B417),
                                     fontSize: 18,
                                     fontWeight: FontWeight.w500),
                                 textAlign: TextAlign.start,
                               ),
-                              Text("******")
+                              Text("R\$20,00")
                             ],
                           ))
                     ]),
-                  ]))
+                  ]),   
+              ),
+              const SizedBox(height: 15)
             ])
           ),
         ),
