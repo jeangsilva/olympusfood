@@ -233,24 +233,48 @@ class _HomeScreenState extends State<HomeScreen> {
               //icones do centro
               const SizedBox(height: 10),
               Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-                Column(children: const [
-                  CircleAvatar(
-                      backgroundColor: Color(0xFF49B417),
-                      child: Icon(Icons.menu_book_outlined, color: Colors.white)),
-                  Text("Cardápio")
-                ]),
-                Column(children: const [
-                  CircleAvatar(
-                      backgroundColor: Color(0xFF49B417),
-                      child: Icon(Icons.history_outlined, color: Colors.white),),
-                  Text("Histórico")
-                ]),
-                Column(children: const [
-                  CircleAvatar(
-                      backgroundColor: Color(0xFF49B417),
-                      child: Icon(Icons.favorite_outlined, color: Colors.white)),
-                  Text("Favoritos")
-                ]),
+                Column(
+                  children: [
+                    ElevatedButton(
+                      onPressed: (){},
+                      style: ElevatedButton.styleFrom(
+                        shape: const CircleBorder(), 
+                        backgroundColor: const Color(0xFF49B417),
+                        fixedSize: const Size(60,60)
+                      ),
+                      child: const Icon(Icons.menu_book_outlined, size: 35),
+                    ),
+                    const Text("Cardápio"),
+                  ],
+                ),
+                Column(
+                  children: [
+                    ElevatedButton(
+                      onPressed: (){},
+                      style: ElevatedButton.styleFrom(
+                        shape: const CircleBorder(), 
+                        backgroundColor: const Color(0xFF49B417),
+                        fixedSize: const Size(60,60)
+                      ),
+                      child: const Icon(Icons.history_outlined, size: 35)
+                    ),
+                    const Text("Histórico")
+                  ],
+                ),
+                Column(
+                  children: [
+                    ElevatedButton(
+                      onPressed: (){},
+                      style: ElevatedButton.styleFrom(
+                        shape: const CircleBorder(), 
+                        backgroundColor: const Color(0xFF49B417),
+                        fixedSize: const Size(60,60)
+                      ),
+                      child: const Icon(Icons.favorite_outlined, size: 35)
+                    ),
+                    const Text("Favoritos")
+                  ],
+                )
               ]),
               //Carteira Digital
               const SizedBox(height: 10),
