@@ -119,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               GestureDetector(
                 onTap: () {
                   setState(() {
@@ -205,7 +205,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               //Área da propaganda
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Container(
                 height: 150, // altere o valor da altura para o desejado
                 margin:
@@ -233,32 +233,79 @@ class _HomeScreenState extends State<HomeScreen> {
               //icones do centro
               const SizedBox(height: 10),
               Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-                Column(children: const [
-                  CircleAvatar(
-                      backgroundColor: Color(0xFF49B417),
-                      child: Icon(Icons.menu_book_outlined, color: Colors.white)),
-                  Text("Cardápio")
-                ]),
-                Column(children: const [
-                  CircleAvatar(
-                      backgroundColor: Color(0xFF49B417),
-                      child: Icon(Icons.history_outlined, color: Colors.white),),
-                  Text("Histórico")
-                ]),
-                Column(children: const [
-                  CircleAvatar(
-                      backgroundColor: Color(0xFF49B417),
-                      child: Icon(Icons.favorite_outlined, color: Colors.white)),
-                  Text("Favoritos")
-                ]),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      onPressed: (){},
+                      style: ElevatedButton.styleFrom(
+                        shape: const CircleBorder(), 
+                        backgroundColor: const Color(0xFF49B417),
+                        fixedSize: const Size(65,65)
+                      ),
+                      child: const Icon(Icons.menu_book_outlined, size: 30),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.all(9.0),
+                      child: Text("CARDÁPIO"),
+                    ),
+                  ],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      onPressed: (){},
+                      style: ElevatedButton.styleFrom(
+                        shape: const CircleBorder(), 
+                        backgroundColor: const Color(0xFF49B417),
+                        fixedSize: const Size(65,65)
+                      ),
+                      child: const Icon(Icons.history_outlined, size: 30)
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.all(9.0),
+                      child: Text("HISTÓRICO"),
+                    )
+                  ],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      onPressed: (){},
+                      style: ElevatedButton.styleFrom(
+                        shape: const CircleBorder(), 
+                        backgroundColor: const Color(0xFF49B417),
+                        fixedSize: const Size(65,65)
+                      ),
+                      child: const Icon(Icons.favorite_border_outlined, size: 30)
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.all(9.0),
+                      child: Text("FAVORITOS"),
+                    )
+                  ],
+                )
               ]),
               //Carteira Digital
-              const SizedBox(height: 10),
+              const SizedBox(height: 15),
               Container(
                   margin: const EdgeInsets.symmetric(horizontal: 16),
                   height: 200,
+                  decoration: const BoxDecoration(
+                    color: Color.fromARGB(255, 197, 191, 191),
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(30),
+                        topRight: Radius.circular(30),
+                        bottomLeft: Radius.circular(30),
+                        bottomRight: Radius.circular(30)),
+                  ),
                   child: Column(children: [
-                    Row(children: [
+                    Row(children: const [
                       Padding(
                         padding: EdgeInsets.all(15),
                         child: Text(
@@ -273,49 +320,43 @@ class _HomeScreenState extends State<HomeScreen> {
                     ]),
                     Row(children: [
                       Padding(
-                          padding: EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(10),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
+                            children: const [
                               Text(
-                                "Carteira Digital",
+                                "Saldo Disponível",
                                 style: TextStyle(
                                     color: Color(0xFF49B417),
                                     fontSize: 18,
                                     fontWeight: FontWeight.w500),
                                 textAlign: TextAlign.start,
                               ),
-                              Text("******")
+                              Text("R\$ 120,00")
                             ],
                           ))
                     ]),
                     Row(children: [
                       Padding(
-                          padding: EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(10),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
+                            children: const [
                               Text(
-                                "Carteira Digital",
+                                "Limite Diário",
                                 style: TextStyle(
                                     color: Color(0xFF49B417),
                                     fontSize: 18,
                                     fontWeight: FontWeight.w500),
                                 textAlign: TextAlign.start,
                               ),
-                              Text("******")
+                              Text("R\$20,00")
                             ],
                           ))
                     ]),
-                  ]),
-                  decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 197, 191, 191),
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(30),
-                        topRight: Radius.circular(30),
-                        bottomLeft: Radius.circular(30),
-                        bottomRight: Radius.circular(30)),
-                  ))
+                  ]),   
+              ),
+              const SizedBox(height: 15)
             ])
           ),
         ),
