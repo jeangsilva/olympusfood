@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:olympusfood/screens/home_screen.dart';
 import 'screens/login_screen.dart';
 
 class LoadingScreen extends StatefulWidget {
@@ -29,7 +30,7 @@ class _LoadingScreenState extends State<LoadingScreen>
     _animationController.forward().then((value) {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (_) => LoginScreen(),
+          builder: (_) => HomeScreen(),
         ),
       );
     });

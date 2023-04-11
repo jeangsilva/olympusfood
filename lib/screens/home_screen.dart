@@ -22,9 +22,9 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   final lightTheme = ThemeData(
-    primaryColor: Colors.green,
+    primaryColor: const Color(0xFF49B417),
     backgroundColor: Colors.white,
-    textTheme: TextTheme(
+    textTheme: const TextTheme(
       bodyText1: TextStyle(
         color: Colors.black,
       ),
@@ -46,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return MaterialApp(
       theme: isDarkModeEnabled ? darkTheme : lightTheme,
       home: Scaffold(
-        bottomNavigationBar: Navigation(),
+        bottomNavigationBar: const Navigation(),
         backgroundColor: isDarkModeEnabled ? Colors.grey[800] : Colors.white,
         body: SafeArea(
             child: Column(
@@ -54,10 +54,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
               Container(
                 height: 200,
-                decoration: BoxDecoration(
-                  color: Colors.green,
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 73, 180, 23),
                   borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(30),
                     bottomRight: Radius.circular(30),
                   ),
                 ),
@@ -65,12 +64,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.all(16.0),
                   child: Row(
                     children: [
-                      CircleAvatar(
+                      const CircleAvatar(
                         radius: 40,
                         backgroundImage: NetworkImage(
                             'https://www.w3schools.com/howto/img_avatar.png'),
                       ),
-                      SizedBox(width: 16),
+                      const SizedBox(width: 16),
                       Expanded(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -128,7 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
                 child: Container(
                   margin: EdgeInsets.symmetric(horizontal: 55, vertical: 10),
-                  height: 40,
+                  height: 30,
                   width: 120,
                   decoration: BoxDecoration(
                     color: Colors.grey[400],
@@ -147,7 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Container(
                             decoration: BoxDecoration(
                               color: isAlunoSelected
-                                  ? Colors.green
+                                  ? Color(0xFF49B417)
                                   : Colors.grey[400],
                               borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(20),
@@ -180,7 +179,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             decoration: BoxDecoration(
                               color: isAlunoSelected
                                   ? Colors.grey[400]
-                                  : Colors.green,
+                                  : const Color(0xFF49B417),
                               borderRadius: BorderRadius.only(
                                 topRight: Radius.circular(20),
                                 bottomRight: Radius.circular(20),
@@ -204,6 +203,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
+              //Área da propaganda
               SizedBox(height: 16),
               Container(
                 height: 150, // altere o valor da altura para o desejado
@@ -213,7 +213,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   length: _images.length,
                   align: IndicatorAlign.bottom,
                   indicatorColor: Colors.grey,
-                  indicatorSelectorColor: Colors.green,
+                  indicatorSelectorColor: const Color(0xFF49B417),
                   child: PageView(
                     controller: _pageController,
                     children: _images.map((imageUrl) {
@@ -229,30 +229,30 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-                Column(children: [
+                Column(children: const [
                   CircleAvatar(
                       backgroundColor: Color(0xFF49B417),
-                      child: Icon(Icons.abc_outlined)),
+                      child: Icon(Icons.abc_outlined, color: Colors.white)),
                   Text("Cardápio")
                 ]),
-                Column(children: [
+                Column(children: const [
                   CircleAvatar(
                       backgroundColor: Color(0xFF49B417),
-                      child: Icon(Icons.abc_outlined)),
+                      child: Icon(Icons.abc_outlined, color: Colors.white),),
                   Text("Histórico")
                 ]),
-                Column(children: [
+                Column(children: const [
                   CircleAvatar(
                       backgroundColor: Color(0xFF49B417),
-                      child: Icon(Icons.abc_outlined)),
+                      child: Icon(Icons.abc_outlined, color: Colors.white)),
                   Text("Favoritos")
                 ]),
               ]),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Container(
-                  margin: EdgeInsets.symmetric(horizontal: 16),
+                  margin: const EdgeInsets.symmetric(horizontal: 16),
                   height: 200,
                   child: Column(children: [
                     Row(children: [
@@ -261,7 +261,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Text(
                           "Carteira Digital",
                           style: TextStyle(
-                              color: Colors.green,
+                              color: Color(0xFF49B417),
                               fontSize: 24,
                               fontWeight: FontWeight.w600),
                           textAlign: TextAlign.start,
@@ -285,7 +285,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               Text(
                                 "Carteira Digital",
                                 style: TextStyle(
-                                    color: Colors.green,
+                                    color: Color(0xFF49B417),
                                     fontSize: 18,
                                     fontWeight: FontWeight.w500),
                                 textAlign: TextAlign.start,
@@ -303,7 +303,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               Text(
                                 "Carteira Digital",
                                 style: TextStyle(
-                                    color: Colors.green,
+                                    color: Color(0xFF49B417),
                                     fontSize: 18,
                                     fontWeight: FontWeight.w500),
                                 textAlign: TextAlign.start,
@@ -323,6 +323,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ))
             ])),
       ),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
