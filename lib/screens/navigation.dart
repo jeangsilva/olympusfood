@@ -12,7 +12,7 @@ class _NavigationState extends State<Navigation> {
   build(BuildContext context) {
     return BottomAppBar(
       height: 70,
-      //shape: CircularNotchedRectangle(),
+      shape: CircularNotchedRectangle(),
       color: Color(0xFF49B417),
       elevation: 0,
       child: Row(
