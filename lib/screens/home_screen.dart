@@ -119,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               GestureDetector(
                 onTap: () {
                   setState(() {
@@ -205,7 +205,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               //Área da propaganda
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Container(
                 height: 150, // altere o valor da altura para o desejado
                 margin:
@@ -234,43 +234,49 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 10),
               Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     ElevatedButton(
                       onPressed: (){},
                       style: ElevatedButton.styleFrom(
                         shape: const CircleBorder(), 
                         backgroundColor: const Color(0xFF49B417),
-                        fixedSize: const Size(60,60)
+                        fixedSize: const Size(65,65)
                       ),
-                      child: const Icon(Icons.menu_book_outlined, size: 35),
+                      child: const Icon(Icons.menu_book_outlined, size: 30),
                     ),
                     const Text("Cardápio"),
                   ],
                 ),
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     ElevatedButton(
                       onPressed: (){},
                       style: ElevatedButton.styleFrom(
                         shape: const CircleBorder(), 
                         backgroundColor: const Color(0xFF49B417),
-                        fixedSize: const Size(60,60)
+                        fixedSize: const Size(65,65)
                       ),
-                      child: const Icon(Icons.history_outlined, size: 35)
+                      child: const Icon(Icons.history_outlined, size: 30)
                     ),
                     const Text("Histórico")
                   ],
                 ),
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     ElevatedButton(
                       onPressed: (){},
                       style: ElevatedButton.styleFrom(
                         shape: const CircleBorder(), 
                         backgroundColor: const Color(0xFF49B417),
-                        fixedSize: const Size(60,60)
+                        fixedSize: const Size(65,65)
                       ),
-                      child: const Icon(Icons.favorite_outlined, size: 35)
+                      child: const Icon(Icons.favorite_outlined, size: 30)
                     ),
                     const Text("Favoritos")
                   ],
@@ -281,8 +287,16 @@ class _HomeScreenState extends State<HomeScreen> {
               Container(
                   margin: const EdgeInsets.symmetric(horizontal: 16),
                   height: 200,
+                  decoration: const BoxDecoration(
+                    color: Color.fromARGB(255, 197, 191, 191),
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(30),
+                        topRight: Radius.circular(30),
+                        bottomLeft: Radius.circular(30),
+                        bottomRight: Radius.circular(30)),
+                  ),
                   child: Column(children: [
-                    Row(children: [
+                    Row(children: const [
                       Padding(
                         padding: EdgeInsets.all(15),
                         child: Text(
@@ -300,7 +314,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           padding: EdgeInsets.all(10),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
+                            children: const [
                               Text(
                                 "Carteira Digital",
                                 style: TextStyle(
@@ -315,10 +329,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     ]),
                     Row(children: [
                       Padding(
-                          padding: EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(10),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
+                            children: const [
                               Text(
                                 "Carteira Digital",
                                 style: TextStyle(
@@ -331,15 +345,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ],
                           ))
                     ]),
-                  ]),
-                  decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 197, 191, 191),
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(30),
-                        topRight: Radius.circular(30),
-                        bottomLeft: Radius.circular(30),
-                        bottomRight: Radius.circular(30)),
-                  ))
+                  ]))
             ])
           ),
         ),
