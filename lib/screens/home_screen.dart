@@ -303,6 +303,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 15),
               Container(
                   margin: const EdgeInsets.symmetric(horizontal: 16),
+                  padding: const EdgeInsets.all(15),
                   height: 200,
                   decoration: const BoxDecoration(
                     color: Color.fromARGB(255, 197, 191, 191),
@@ -312,10 +313,11 @@ class _HomeScreenState extends State<HomeScreen> {
                         bottomLeft: Radius.circular(30),
                         bottomRight: Radius.circular(30)),
                   ),
-                  child: Column(children: [
+                  child: Column(
+                    children: [
                     Row(children: const [
                       Padding(
-                        padding: EdgeInsets.all(15),
+                        padding: EdgeInsets.symmetric(vertical: 11),
                         child: Text(
                           "Carteira Digital",
                           style: TextStyle(
@@ -326,27 +328,37 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       )
                     ]),
-                    Row(children: [
-                      Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Text(
-                                "Saldo Disponível",
-                                style: TextStyle(
-                                    color: Color(0xFF49B417),
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500),
-                                textAlign: TextAlign.start,
-                              ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text(
+                              "Saldo Disponível",
+                              style: TextStyle(
+                                  color: Color(0xFF49B417),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500),
+                              textAlign: TextAlign.start,
+                            ),
                               Text("R\$ 120,00")
-                            ],
-                          ))
-                    ]),
+                          ],
+                        ),
+                        //Colocar aqui o botão de visualização
+                        Column(
+                          children: const [
+                            Icon(
+                              Icons.visibility_outlined, 
+                              size: 30,
+                            ),
+                          ],
+                        ),    
+                      ]
+                    ),
                     Row(children: [
                       Padding(
-                          padding: const EdgeInsets.all(10),
+                          padding: const EdgeInsets.symmetric(vertical:10),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: const [
