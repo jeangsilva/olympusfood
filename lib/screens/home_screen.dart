@@ -65,12 +65,26 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.all(16.0),
                   child: Row(
                     children: [
-                      const CircleAvatar(
-                        radius: 40,
-                        backgroundImage: NetworkImage(
-                            'https://www.w3schools.com/howto/img_avatar.png'),
+                      Column( //teste
+                        children: const [
+                          SizedBox(height: 30),
+                          CircleAvatar(
+                            radius: 40,
+                            backgroundImage: NetworkImage(
+                                'https://www.w3schools.com/howto/img_avatar.png'),
+                          ),
+                          SizedBox(height: 25),
+                                Text(
+                                  'Olá, Maria Clara!',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                        ],
                       ),
-                      const SizedBox(width: 16),
+                      //const SizedBox(width: 16),
                       Expanded(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -90,15 +104,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 fontSize: 20,
                               ),
                             ),
-                            SizedBox(height: 16),
-                            Text(
-                              'Olá, Maria Clara',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                              ),
-                            ),
+                            
                           ],
+                          
                         ),
                       ),
                       IconButton(
