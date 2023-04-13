@@ -370,10 +370,19 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         //Colocar aqui o botão de visualização
                         Column(
-                          children: const [
-                            Icon(
-                              Icons.visibility_outlined, 
-                              size: 30,
+                          children: [
+                            IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  _showText = !_showText;
+                                });
+                              },
+                              style: ElevatedButton.styleFrom(
+                                fixedSize: const Size(50, 50), // Define um tamanho fixo para o botão
+                              ),
+                              icon: Icon(
+                                _showText ? Icons.visibility : Icons.visibility_off,
+                              ),
                             ),
                           ],
                         ),    
