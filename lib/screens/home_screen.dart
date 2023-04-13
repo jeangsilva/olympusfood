@@ -12,6 +12,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   bool isDarkModeEnabled = false;
   bool isAlunoSelected = true;
+  bool _showText = false;
 
   final PageController _pageController = PageController();
 
@@ -25,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
     primaryColor: const Color(0xFF49B417),
     backgroundColor: Colors.white,
     textTheme: const TextTheme(
-      bodyText1: TextStyle(
+      bodyLarge: TextStyle(
         color: Colors.black,
       ),
     ),
@@ -34,8 +35,8 @@ class _HomeScreenState extends State<HomeScreen> {
   final darkTheme = ThemeData(
     primaryColor: Colors.grey[900]!,
     backgroundColor: Colors.grey[800]!,
-    textTheme: TextTheme(
-      bodyText1: TextStyle(
+    textTheme: const TextTheme(
+      bodyLarge: TextStyle(
         color: Colors.white,
       ),
     ),
@@ -187,9 +188,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Container(
                             decoration: BoxDecoration(
                               color: isAlunoSelected
-                                  ? Color.fromRGBO(156, 156, 156, 1)
+                                  ? const Color.fromRGBO(156, 156, 156, 1)
                                   : const Color(0xFF49B417),
-                              borderRadius: BorderRadius.only(
+                              borderRadius: const BorderRadius.only(
                                 topRight: Radius.circular(20),
                                 bottomRight: Radius.circular(20),
                               ),
@@ -333,8 +334,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
-                            Text(
+                          children: [
+                            const Text(
                               "Saldo Disponível",
                               style: TextStyle(
                                   color: Color(0xFF49B417),
@@ -342,15 +343,24 @@ class _HomeScreenState extends State<HomeScreen> {
                                   fontWeight: FontWeight.w500),
                               textAlign: TextAlign.start,
                             ),
-                              Text("R\$ 120,00")
+                              Text(_showText ? "R\$ 120,00" : "**********")
                           ],
                         ),
                         //Colocar aqui o botão de visualização
                         Column(
-                          children: const [
-                            Icon(
-                              Icons.visibility_outlined, 
-                              size: 30,
+                          children: [
+                            IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  _showText = !_showText;
+                                });
+                              },
+                              style: ElevatedButton.styleFrom(
+                                fixedSize: const Size(50, 50), // Define um tamanho fixo para o botão
+                              ),
+                              icon: Icon(
+                                _showText ? Icons.visibility : Icons.visibility_off,
+                              ),
                             ),
                           ],
                         ),    
@@ -361,8 +371,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           padding: const EdgeInsets.symmetric(vertical:10),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Text(
+                            children: [
+                              const Text(
                                 "Limite Diário",
                                 style: TextStyle(
                                     color: Color(0xFF49B417),
@@ -370,7 +380,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     fontWeight: FontWeight.w500),
                                 textAlign: TextAlign.start,
                               ),
-                              Text("R\$20,00")
+                              Text(_showText ? "R\$ 20,00" : "**********")
                             ],
                           ))
                     ]),
