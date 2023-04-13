@@ -257,9 +257,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       child: const Icon(Icons.menu_book_outlined, size: 30),
                     ),
-                    const Padding(
-                      padding: EdgeInsets.all(9.0),
-                      child: Text("CARDÁPIO"),
+                       Padding(
+                      padding: const EdgeInsets.all(9.0),
+                      child: Text(
+                        "CARDÁPIO",
+                        style: TextStyle(
+                          color:isDarkModeEnabled 
+                            ?Colors.white 
+                            :Colors.black
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -276,9 +283,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       child: const Icon(Icons.history_outlined, size: 30)
                     ),
-                    const Padding(
-                      padding: EdgeInsets.all(9.0),
-                      child: Text("HISTÓRICO"),
+                    Padding(
+                      padding: const EdgeInsets.all(9.0),
+                      child: Text(
+                        "HISTÓRICO", 
+                        style: TextStyle(
+                          color:isDarkModeEnabled 
+                          ? Colors.white 
+                          : Colors.black
+                        ),
+                      ),
                     )
                   ],
                 ),
@@ -295,9 +309,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       child: const Icon(Icons.favorite_border_outlined, size: 30)
                     ),
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.all(9.0),
-                      child: Text("FAVORITOS"),
+                      child: Text(
+                        "FAVORITOS",
+                        style: TextStyle(
+                          color:isDarkModeEnabled 
+                          ? Colors.white 
+                          : Colors.black
+                        ),
+                      ),
                     )
                   ],
                 )
