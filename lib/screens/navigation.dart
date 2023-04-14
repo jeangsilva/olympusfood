@@ -72,10 +72,12 @@ class _NavigationState extends State<Navigation> {
                                 backgroundColor: const Color(0xFF49B417),
                                 fixedSize: const Size(60, 60), // Define um tamanho fixo para o botão
                               ),
-              child: const Icon(
+              child: Transform.translate(
+                offset: const Offset(-10, 0),
+                child: const Icon(
                 Icons.monetization_on_outlined,
                 size: 50,
-                textDirection: TextDirection.rtl,
+                ),
               ),
             ),
           ),
