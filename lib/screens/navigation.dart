@@ -64,7 +64,7 @@ class _NavigationState extends State<Navigation> {
             ],
           ),
           Transform.translate(
-            offset: const Offset(0, -50), // move o botão para cima
+            offset: const Offset(0, -35), // move o botão para cima
             child: ElevatedButton(
               onPressed: () => Null,
               style: ElevatedButton.styleFrom(
@@ -73,10 +73,10 @@ class _NavigationState extends State<Navigation> {
                                 fixedSize: const Size(60, 60), // Define um tamanho fixo para o botão
                               ),
               child: Transform.translate(
-                offset: const Offset(-10, 0),
+                offset: const Offset(-18, -3),
                 child: const Icon(
                 Icons.monetization_on_outlined,
-                size: 50,
+                size: 65,
                 ),
               ),
             ),
