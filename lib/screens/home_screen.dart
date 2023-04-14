@@ -1,6 +1,7 @@
 import 'package:olympusfood/screens/navigation.dart';
 import 'package:page_indicator/page_indicator.dart';
 import 'package:flutter/material.dart';
+import 'history_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -105,9 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 fontSize: 20,
                               ),
                             ),
-                            
-                          ],
-                          
+                          ], 
                         ),
                       ),
                       IconButton(
@@ -136,7 +135,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   });
                 },
                 child: Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 55, vertical: 10),
+                  margin: const EdgeInsets.symmetric(
+                    horizontal: 55, vertical: 10),
                   height: 30,
                   width: 120,
                   decoration: BoxDecoration(
@@ -273,7 +273,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     ElevatedButton(
-                      onPressed: (){},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HistoryScreen()),
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
                         shape: const CircleBorder(), 
                         backgroundColor: const Color(0xFF49B417),
