@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
 
+
+
 class Navigation extends StatefulWidget {
   const Navigation({Key? key}) : super(key: key);
 
@@ -16,42 +18,69 @@ class _NavigationState extends State<Navigation> {
       shape: CircularNotchedRectangle(),
       color: Color(0xFF49B417),
       elevation: 0,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+      child: Stack(
+        alignment: Alignment.center,
         children: [
-          IconButton(
-              onPressed: () {
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              IconButton(
+                onPressed: () => {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HomeScreen()),
-                );
+                  MaterialPageRoute(builder: (context) => const HomeScreen()),
+                ),
               },
-              icon: const Icon(
-                Icons.home_outlined,
-                size: 30,
+                icon: const Icon(
+                  Icons.home_sharp,
+                  size: 30,
+                ),
+                color: Colors.white,
               ),
-              color: Colors.white),
-          IconButton(
+              IconButton(
+                onPressed: () => Null,
+                icon: const Icon(
+                  Icons.add_business,
+                  size: 30,
+                ),
+                color: Colors.white,
+              ),
+              IconButton(
+                onPressed: () => Null,
+                icon: const Icon(
+                  Icons.notifications,
+                  size: 30,
+                ),
+                color: Colors.white,
+              ),
+              IconButton(
+                onPressed: () => Null,
+                icon: const Icon(
+                  Icons.person_outline,
+                  size: 30,
+                ),
+                color: Colors.white,
+              ),
+            ],
+          ),
+          Transform.translate(
+            offset: const Offset(0, -50), // move o botão para cima
+            child: ElevatedButton(
               onPressed: () => Null,
-              icon: const Icon(
-                Icons.list_alt,
-                size: 30,
+              style: ElevatedButton.styleFrom(
+                                shape: const CircleBorder(),
+                                backgroundColor: const Color(0xFF49B417),
+                                fixedSize: const Size(60, 60), // Define um tamanho fixo para o botão
+                              ),
+              child: Transform.translate(
+                offset: const Offset(-10, 0),
+                child: const Icon(
+                Icons.monetization_on_outlined,
+                size: 50,
+                ),
               ),
-              color: Colors.white),
-          IconButton(
-              onPressed: () => null,
-              icon: const Icon(
-                Icons.notifications,
-                size: 30,
-              ),
-              color: Colors.white),
-          IconButton(
-              onPressed: () => null,
-              icon: const Icon(
-                Icons.person_outline,
-                size: 30,
-              ),
-              color: Colors.white),
+            ),
+          ),
         ],
       ),
     );

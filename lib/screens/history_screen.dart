@@ -2,6 +2,8 @@ import 'package:olympusfood/screens/navigation.dart';
 import 'package:flutter/material.dart';
 
 class HistoryScreen extends StatelessWidget {
+  const HistoryScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,32 +21,32 @@ class HistoryScreen extends StatelessWidget {
             Row(
               children: [
                 IconButton(
-                  icon: Icon(Icons.arrow_back),
+                  icon: const Icon(Icons.arrow_back),
                   onPressed: () => Navigator.of(context).pop(),
                 ),
                 // Nome "Histórico"
-                Text(
+                const Text(
                   'Histórico',
                   style: TextStyle(fontSize: 18),
                 ),
               ],
             ),
-            SizedBox(height: 23), // Espaçamento de 23 pixels
+            const SizedBox(height: 23), // Espaçamento de 23 pixels
             // Nome "Últimos pedidos"
-            Text(
+            const Text(
               'Últimos pedidos',
               style: TextStyle(fontSize: 20),
             ),
-            SizedBox(height: 10), // Espaçamento de 10 pixels
+            const SizedBox(height: 10), // Espaçamento de 10 pixels
             // Texto "Ver todos os pedidos" alinhado à direita
-            Align(
+            const Align(
               alignment: Alignment.topRight,
               child: Text(
                 'Ver todos os pedidos',
                 style: TextStyle(fontSize: 16),
               ),
             ),
-            SizedBox(height: 30), // Espaçamento de 30 pixels
+            const SizedBox(height: 30), // Espaçamento de 30 pixels
             // Grid com os cards dos lanches
             Expanded(
               child: GridView.count(
@@ -76,12 +78,12 @@ class HistoryScreen extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          SizedBox(height: 8), // Espaçamento de 8 pixels
+          const SizedBox(height: 8), // Espaçamento de 8 pixels
           Text(
             title,
-            style: TextStyle(fontSize: 16),
+            style: const TextStyle(fontSize: 16),
           ),
-          SizedBox(height: 8), // Espaçamento de 8 pixels
+          const SizedBox(height: 8), // Espaçamento de 8 pixels
         ],
       ),
     );
