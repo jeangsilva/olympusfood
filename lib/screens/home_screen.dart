@@ -416,31 +416,48 @@ class _HomeScreenState extends State<HomeScreen> {
                   ]),
                 ),
                 const SizedBox(height: 15),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 16),
-                      padding: const EdgeInsets.all(15),
-                      height: 50,
-                      width: 300,
-                      decoration: const BoxDecoration(
-                        color: Color.fromARGB(255, 197, 191, 191),
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(5),
-                            topRight: Radius.circular(5),
-                            bottomLeft: Radius.circular(5),
-                            bottomRight: Radius.circular(5)),
+                Padding(padding: const EdgeInsets.all(17),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          height: 50,
+                          margin: const EdgeInsets.all(6),
+                          decoration: BoxDecoration(
+                            color: const Color.fromARGB(255, 197, 191, 191),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(9.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: const [
+                                Icon(Icons.wallet),
+                                SizedBox(width: 14,),
+                                Text(
+                                  "Minha Carteira",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
-                    const Icon(Icons.help,
-                       color: Color.fromARGB(255, 197, 191, 191),
-                       size: 30,
-                    ),
-                    const SizedBox(height: 100)
-                  ],
-                )
-              ])),
+                      const Icon(Icons.help,
+                        color: Color.fromARGB(255, 197, 191, 191),
+                        size: 40,
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 30,)
+              ]
+            ),
+          ),
         ),
       ),
       debugShowCheckedModeBanner: false,
