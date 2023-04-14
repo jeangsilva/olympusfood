@@ -15,7 +15,7 @@ class HistoryScreen extends StatelessWidget {
             // Container verde no topo da tela
             Container(
               height: 40,
-              color: Colors.green,
+              color: Color(0xFF49B417),
             ),
             // Linha com o botão de voltar e o nome "Histórico"
             Row(
