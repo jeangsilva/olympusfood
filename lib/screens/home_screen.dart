@@ -1,7 +1,6 @@
 import 'package:olympusfood/screens/navigation.dart';
 import 'package:page_indicator/page_indicator.dart';
 import 'package:flutter/material.dart';
-
 import 'history_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -107,9 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 fontSize: 20,
                               ),
                             ),
-                            
-                          ],
-                          
+                          ], 
                         ),
                       ),
                       IconButton(
@@ -192,9 +189,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Container(
                             decoration: BoxDecoration(
                               color: isAlunoSelected
-                                  ? Color.fromRGBO(156, 156, 156, 1)
+                                  ? const Color.fromRGBO(156, 156, 156, 1)
                                   : const Color(0xFF49B417),
-                              borderRadius: BorderRadius.only(
+                              borderRadius: const BorderRadius.only(
                                 topRight: Radius.circular(20),
                                 bottomRight: Radius.circular(20),
                               ),
@@ -364,8 +361,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
-                            Text(
+                          children: [
+                            const Text(
                               "Saldo Disponível",
                               style: TextStyle(
                                   color: Color(0xFF49B417),
@@ -373,23 +370,25 @@ class _HomeScreenState extends State<HomeScreen> {
                                   fontWeight: FontWeight.w500),
                               textAlign: TextAlign.start,
                             ),
-                              Text("R\$ 120,00")
+                              Text(_showText ? "R\$ 120,00" : "**********")
                           ],
                         ),
                         //Colocar aqui o botão de visualização
                         Column(
                           children: [
-                            IconButton(
+                            ElevatedButton(
                               onPressed: () {
                                 setState(() {
                                   _showText = !_showText;
                                 });
                               },
                               style: ElevatedButton.styleFrom(
-                                fixedSize: const Size(50, 50), // Define um tamanho fixo para o botão
+                                shape: const CircleBorder(),
+                                backgroundColor: const Color(0xFF49B417),
+                                fixedSize: const Size(40, 40), // Define um tamanho fixo para o botão
                               ),
-                              icon: Icon(
-                                _showText ? Icons.visibility : Icons.visibility_off,
+                              child: Icon(
+                                _showText ? Icons.visibility_outlined : Icons.visibility_off_outlined,
                               ),
                             ),
                           ],
