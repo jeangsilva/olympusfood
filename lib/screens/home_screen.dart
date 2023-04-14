@@ -1,6 +1,7 @@
 import 'package:olympusfood/screens/navigation.dart';
 import 'package:page_indicator/page_indicator.dart';
 import 'package:flutter/material.dart';
+
 import 'history_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -51,64 +52,64 @@ class _HomeScreenState extends State<HomeScreen> {
         bottomNavigationBar: const Navigation(),
         backgroundColor: isDarkModeEnabled ? Colors.grey[800] : Colors.white,
         body: SafeArea(
-          child: SingleChildScrollView(
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                Container(
-                  height: 200,
-                  decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 73, 180, 23),
-                    borderRadius: BorderRadius.only(
-                      bottomRight: Radius.circular(30),
-                    ),
+          child:SingleChildScrollView(
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+              Container(
+                height: 200,
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 73, 180, 23),
+                  borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(30),
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Row(
-                      children: [
-                        Column(
-                          //teste
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Row(
+                    children: [
+                      Column( //teste
+                        children: const [
+                          SizedBox(height: 30),
+                          CircleAvatar(
+                            radius: 40,
+                            backgroundImage: NetworkImage(
+                                'https://www.w3schools.com/howto/img_avatar.png'),
+                          ),
+                          SizedBox(height: 25),
+                                Text(
+                                  'Olá, Maria Clara!',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                        ],
+                      ),
+                      //const SizedBox(width: 16),
+                      Expanded(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: const [
-                            SizedBox(height: 30),
-                            CircleAvatar(
-                              radius: 40,
-                              backgroundImage: NetworkImage(
-                                  'https://www.w3schools.com/howto/img_avatar.png'),
-                            ),
-                            SizedBox(height: 25),
                             Text(
-                              'Olá, Maria Clara!',
+                              'Nº da matrícula',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 18,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
+                            Text(
+                              '123456',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                              ),
+                            ),
+                            
                           ],
-                        ),
-                        //const SizedBox(width: 16),
-                        Expanded(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Text(
-                                'Nº da matrícula',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Text(
-                                '123456',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                ),
-                              ),
-                            ],
-                          ),
+                          
                         ),
                       ),
                       IconButton(
@@ -138,7 +139,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   });
                 },
                 child: Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 55, vertical: 10),
+                  margin: const EdgeInsets.symmetric(
+                    horizontal: 55, vertical: 10),
                   height: 30,
                   width: 120,
                   decoration: BoxDecoration(
@@ -275,7 +277,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     ElevatedButton(
-                      onPressed: (){},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HistoryScreen()),
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
                         shape: const CircleBorder(), 
                         backgroundColor: const Color(0xFF49B417),
