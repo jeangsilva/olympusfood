@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'history_screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  State<HomeScreen> createState() => _HomeScreenState(); //tornei pública para tirar o erro.
 }
 
 class _HomeScreenState extends State<HomeScreen> {
@@ -25,7 +25,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final lightTheme = ThemeData(
     primaryColor: const Color(0xFF49B417),
-    backgroundColor: Colors.white,
+    scaffoldBackgroundColor: Colors.white,
+    colorScheme: const ColorScheme.light(
+    background: Colors.white,
+    ),
     textTheme: const TextTheme(
       bodyLarge: TextStyle(
         color: Colors.black,
@@ -34,14 +37,14 @@ class _HomeScreenState extends State<HomeScreen> {
   );
 
   final darkTheme = ThemeData(
-    primaryColor: Colors.grey[900]!,
-    backgroundColor: Colors.grey[800]!,
-    textTheme: const TextTheme(
-      bodyLarge: TextStyle(
-        color: Colors.white,
-      ),
+  primaryColor: Colors.grey[900]!,
+  scaffoldBackgroundColor: Colors.grey[800]!,
+  textTheme: const TextTheme(
+    bodyLarge: TextStyle(
+      color: Colors.white,
     ),
-  );
+  ),
+);
 
   @override
   Widget build(BuildContext context) {
@@ -228,7 +231,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: PageView(
                       controller: _pageController,
                       children: _images.map((imageUrl) {
-                        return Container(
+                        return SizedBox(
                           width: double.infinity,
                           height:
                               100, // altere o valor da altura para o desejado
@@ -280,7 +283,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => HistoryScreen()),
+                                      builder: (context) => const HistoryScreen()),
                                 );
                               },
                               style: ElevatedButton.styleFrom(
@@ -314,7 +317,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: const Icon(Icons.favorite_border_outlined,
                                   size: 30)),
                           Padding(
-                            padding: EdgeInsets.all(9.0),
+                            padding: const EdgeInsets.all(9.0),
                             child: Text(
                               "FAVORITOS",
                               style: TextStyle(
@@ -420,19 +423,20 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Row(
                     children: [
                       Expanded(
-                        child: Container(
-                          height: 50,
-                          margin: const EdgeInsets.all(6),
-                          decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 197, 191, 191),
-                            borderRadius: BorderRadius.circular(8),
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color.fromARGB(255, 197, 191, 191),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(9.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: const [
-                                Icon(Icons.wallet),
+                                Icon(Icons.wallet,color: Colors.black,),
                                 SizedBox(width: 14,),
                                 Text(
                                   "Minha Carteira",
@@ -447,10 +451,18 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                       ),
-                      const Icon(Icons.help,
-                        color: Color.fromARGB(255, 197, 191, 191),
-                        size: 40,
+                      Transform.translate(
+                        offset: const Offset(0,-8),
+                        child: IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.help,
+                          color: Color.fromARGB(255, 197, 191, 191),
+                          size: 40,
+                        ),
                       ),
+                      ),
+                      
                     ],
                   ),
                 ),
@@ -464,3 +476,4 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
