@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
-
-
+import 'perfil_screen.dart';
 
 class Navigation extends StatefulWidget {
   const Navigation({Key? key}) : super(key: key);
@@ -26,11 +25,11 @@ class _NavigationState extends State<Navigation> {
             children: [
               IconButton(
                 onPressed: () => {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const HomeScreen()),
-                ),
-              },
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HomeScreen()),
+                  ),
+                },
                 icon: const Icon(
                   Icons.home_sharp,
                   size: 30,
@@ -54,7 +53,12 @@ class _NavigationState extends State<Navigation> {
                 color: Colors.white,
               ),
               IconButton(
-                onPressed: () => Null,
+                onPressed: () => {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PerfilScreen()),
+                  ),
+                },
                 icon: const Icon(
                   Icons.person_outline,
                   size: 30,
@@ -68,15 +72,16 @@ class _NavigationState extends State<Navigation> {
             child: ElevatedButton(
               onPressed: () => Null,
               style: ElevatedButton.styleFrom(
-                                shape: const CircleBorder(),
-                                backgroundColor: const Color(0xFF49B417),
-                                fixedSize: const Size(60, 60), // Define um tamanho fixo para o botão
-                              ),
+                shape: const CircleBorder(),
+                backgroundColor: const Color(0xFF49B417),
+                fixedSize:
+                    const Size(60, 60), // Define um tamanho fixo para o botão
+              ),
               child: Transform.translate(
                 offset: const Offset(-18, -3),
                 child: const Icon(
-                Icons.monetization_on_outlined,
-                size: 65,
+                  Icons.monetization_on_outlined,
+                  size: 65,
                 ),
               ),
             ),
