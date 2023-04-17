@@ -1,25 +1,3 @@
-
-            // // Container verde no topo da tela
-            // Container(
-            //   height: 40,
-            //   color: Color(0xFF49B417),
-            // ),
-            // // Linha com o botão de voltar e o nome "Histórico"
-            // Row(
-            //   children: [
-                // IconButton(
-                //   icon: const Icon(Icons.arrow_back),
-                //   onPressed: () => Navigator.of(context).pop(),
-                // ),
-            //     // Nome "Histórico"
-            //     const Text(
-            //       'Histórico',
-            //       style: TextStyle(fontSize: 18),
-            //     ),
-            //   ],
-            // ),
-
-
 import 'package:flutter/material.dart';
 import 'package:olympusfood/screens/navigation.dart';
 
