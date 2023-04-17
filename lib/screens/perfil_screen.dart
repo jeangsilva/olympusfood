@@ -1,5 +1,5 @@
-import 'package:olympusfood/screens/navigation.dart';
 import 'package:flutter/material.dart';
+import 'package:olympusfood/screens/navigation.dart';
 
 class PerfilScreen extends StatefulWidget {
   @override
@@ -8,6 +8,9 @@ class PerfilScreen extends StatefulWidget {
 
 class _perfilScreenState extends State<PerfilScreen> {
   bool _editando = false;
+  String _nome = 'Maria Clara Campos';
+  int _idade = 10;
+  String _serieEscolar = '5º ano';
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +40,7 @@ class _perfilScreenState extends State<PerfilScreen> {
                   ),
                   SizedBox(height: 16),
                   Text(
-                    'Maria Clara Campos',
+                    _nome,
                     style: TextStyle(
                       color: Color.fromARGB(255, 255, 255, 255),
                       fontSize: 20,
@@ -68,6 +71,159 @@ class _perfilScreenState extends State<PerfilScreen> {
                         ),
                         child:
                             Text(_editando ? 'Salvar Dados' : 'Editar Dados'),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 16),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Nome Completo',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 8),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.black, width: 1),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          _nome,
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.black,
+                          ),
+                        ),
+                        _editando
+                            ? IconButton(
+                                onPressed: () {
+                                  // Adicione aqui a lógica para editar o nome
+                                },
+                                icon: Icon(Icons.edit),
+                                color: Colors.black,
+                              )
+                            : SizedBox.shrink(),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 16),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          margin: EdgeInsets.symmetric(horizontal: 16),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Idade',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              SizedBox(height: 8),
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 16),
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey[200],
+                                  borderRadius: BorderRadius.circular(10),
+                                  border:
+                                      Border.all(color: Colors.black, width: 1),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      '10 anos',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    _editando
+                                        ? IconButton(
+                                            onPressed: () {
+// Adicione aqui a lógica para editar a idade
+                                            },
+                                            icon: Icon(Icons.edit),
+                                            color: Colors.black,
+                                          )
+                                        : SizedBox.shrink(),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          margin: EdgeInsets.symmetric(horizontal: 16),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Série Escolar',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              SizedBox(height: 8),
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 16),
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey[200],
+                                  borderRadius: BorderRadius.circular(10),
+                                  border:
+                                      Border.all(color: Colors.black, width: 1),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      '5º ano',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    _editando
+                                        ? IconButton(
+                                            onPressed: () {
+// Adicione aqui a lógica para editar a série escolar
+                                            },
+                                            icon: Icon(Icons.edit),
+                                            color: Colors.black,
+                                          )
+                                        : SizedBox.shrink(),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ],
                   ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
 import 'perfil_screen.dart';
+import 'notification_screen.dart';
 
 class Navigation extends StatefulWidget {
   const Navigation({Key? key}) : super(key: key);
@@ -45,7 +46,13 @@ class _NavigationState extends State<Navigation> {
                 color: Colors.white,
               ),
               IconButton(
-                onPressed: () => Null,
+                onPressed: () => {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => NotificationScreen()),
+                  ),
+                },
                 icon: const Icon(
                   Icons.notifications,
                   size: 30,
