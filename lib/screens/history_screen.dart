@@ -47,13 +47,13 @@ class _HistoryScreenState extends State<HistoryScreen>
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  icon: const Icon(Icons.arrow_back),
+                  icon: const Icon(Icons.arrow_circle_left_outlined),
                 ),
                 const Text(
-                  'Histórico',
+                  'HISTÓRICO',
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 18,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
