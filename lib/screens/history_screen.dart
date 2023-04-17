@@ -74,13 +74,13 @@ class _HistoryScreenState extends State<HistoryScreen>
               unselectedLabelColor: Colors.grey,
               tabs: const [
                 Tab(
-                  text: 'Dia',
+                  text: 'DIÁRIO',
                 ),
                 Tab(
-                  text: 'Semana',
+                  text: 'SEMANAL',
                 ),
                 Tab(
-                  text: 'Mês',
+                  text: 'MENSAL',
                 ),
               ],
             ),
