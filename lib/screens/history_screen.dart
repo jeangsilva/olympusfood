@@ -1,91 +1,139 @@
-import 'package:olympusfood/screens/navigation.dart';
 import 'package:flutter/material.dart';
+import 'package:olympusfood/screens/navigation.dart';
 
-class HistoryScreen extends StatelessWidget {
+class HistoryScreen extends StatefulWidget {
   const HistoryScreen({super.key});
+
+  @override
+  State<HistoryScreen> createState() => _HistoryScreenState();
+}
+
+class _HistoryScreenState extends State<HistoryScreen>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 3, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: const Navigation(),
-      body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Container verde no topo da tela
-            Container(
-              height: 40,
-              color: Color(0xFF49B417),
-            ),
-            // Linha com o botão de voltar e o nome "Histórico"
-            Row(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        automaticallyImplyLeading: false, //para tirar a seta do appBar
+        backgroundColor: const Color(0xFF49B417),
+        elevation: 0,
+        title: const SizedBox.shrink(),
+      ),
+      body: Column(
+        children: [
+          SizedBox(
+            height: 60,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                //icone de voltar
                 IconButton(
-                  icon: const Icon(Icons.arrow_back),
-                  onPressed: () => Navigator.of(context).pop(),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(Icons.arrow_circle_left_outlined),
                 ),
-                // Nome "Histórico"
                 const Text(
-                  'Histórico',
-                  style: TextStyle(fontSize: 18),
+                  'HISTÓRICO',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(
+                  width: 24,
                 ),
               ],
             ),
-            const SizedBox(height: 23), // Espaçamento de 23 pixels
-            // Nome "Últimos pedidos"
-            const Text(
-              'Últimos pedidos',
-              style: TextStyle(fontSize: 20),
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          SizedBox(
+            height: 40,
+            child: TabBar(
+              controller: _tabController,
+              labelColor: Colors.green,
+              unselectedLabelColor: Colors.grey,
+              tabs: const [
+                Tab(
+                  text: 'DIÁRIO',
+                ),
+                Tab(
+                  text: 'SEMANAL',
+                ),
+                Tab(
+                  text: 'MENSAL',
+                ),
+              ],
             ),
-            const SizedBox(height: 10), // Espaçamento de 10 pixels
-            // Texto "Ver todos os pedidos" alinhado à direita
-            const Align(
-              alignment: Alignment.topRight,
-              child: Text(
-                'Ver todos os pedidos',
-                style: TextStyle(fontSize: 16),
-              ),
+          ),
+          Expanded(
+            child: TabBarView(
+              controller: _tabController,
+              children: [
+                _buildHistorico(),
+                _buildHistorico(),
+                _buildHistorico(),
+              ],
             ),
-            const SizedBox(height: 30), // Espaçamento de 30 pixels
-            // Grid com os cards dos lanches
-            Expanded(
-              child: GridView.count(
-                crossAxisCount: 3,
-                children: [
-                  _buildCard('Salada',
-                      'https://cdn.pixabay.com/photo/2017/02/15/10/39/salad-2068220_960_720.jpg'),
-                  _buildCard('Sandwich',
-                      'https://cdn.pixabay.com/photo/2020/06/06/05/31/juicy-sandwich-5265292_960_720.jpg'),
-                  _buildCard('Suco',
-                      'https://cdn.pixabay.com/photo/2017/01/20/14/59/orange-1995044_960_720.jpg'),
-                ],
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
 
-  // Widget para construir os cards dos lanches
-  Widget _buildCard(String title, String imageUrl) {
-    return Card(
-      child: Column(
-        children: [
-          Expanded(
-            child: Image.network(
-              imageUrl,
-              fit: BoxFit.cover,
-            ),
+  Widget _buildHistorico() {
+    return ListView.builder(
+      itemCount: 10,
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 8,
           ),
-          const SizedBox(height: 8), // Espaçamento de 8 pixels
-          Text(
-            title,
-            style: const TextStyle(fontSize: 16),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                '01/04/2023',
+                style: TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+              Text(
+                'Pedido #${index + 1}',
+                style: const TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+              Text(
+                'R\$ ${(index + 1) * 10}',
+                style: const TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+            ],
           ),
-          const SizedBox(height: 8), // Espaçamento de 8 pixels
-        ],
-      ),
+        );
+      },
     );
   }
 }
