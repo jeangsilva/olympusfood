@@ -70,23 +70,48 @@ class _HistoryScreenState extends State<HistoryScreen>
             height: 40,
             child: TabBar(
               controller: _tabController,
-              labelColor: Colors.green,
+              labelColor: Colors.black,
               unselectedLabelColor: Colors.grey,
-              tabs: const [
-                Tab(
-                  text: 'DIÁRIO',
-                  // child: Container(
-                  //   decoration: BoxDecoration(
-                  //     color: const Color(0xFF49B417),
-                  //     borderRadius: BorderRadius.circular(8),
-                  //   ),
-                  // ),
+              indicator: BoxDecoration(
+                color: const Color(0xFF49B417),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              tabs: [
+                const Tab (
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: Center(
+                      child: Text('DIÁRIO',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                const Tab(
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: Center(
+                      child: Text('SEMANAL',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
                 Tab(
-                  text: 'SEMANAL',
-                ),
-                Tab(
-                  text: 'MENSAL',
+                  child: Container(
+                    width: double.infinity,
+                    child: const Center(
+                      child: Text('MENSAL',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
