@@ -75,6 +75,12 @@ class _HistoryScreenState extends State<HistoryScreen>
               tabs: const [
                 Tab(
                   text: 'DIÁRIO',
+                  // child: Container(
+                  //   decoration: BoxDecoration(
+                  //     color: const Color(0xFF49B417),
+                  //     borderRadius: BorderRadius.circular(8),
+                  //   ),
+                  // ),
                 ),
                 Tab(
                   text: 'SEMANAL',
@@ -89,9 +95,9 @@ class _HistoryScreenState extends State<HistoryScreen>
             child: TabBarView(
               controller: _tabController,
               children: [
-                _buildHistorico(),
-                _buildHistorico(),
-                _buildHistorico(),
+                _buildHistoricoDiario(),
+                _buildHistoricoSemanal(),
+                _buildHistoricoMensal(),
               ],
             ),
           ),
@@ -100,7 +106,79 @@ class _HistoryScreenState extends State<HistoryScreen>
     );
   }
 
-  Widget _buildHistorico() {
+  Widget _buildHistoricoDiario() {
+    return ListView.builder(
+      itemCount: 1,
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 8,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                '01/04/2023',
+                style: TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+              Text(
+                'Pedido #${index + 1}',
+                style: const TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+              Text(
+                'R\$ ${(index + 1) * 10}',
+                style: const TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+  Widget _buildHistoricoSemanal() {
+    return ListView.builder(
+      itemCount: 4,
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 8,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                '01/04/2023',
+                style: TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+              Text(
+                'Pedido #${index + 1}',
+                style: const TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+              Text(
+                'R\$ ${(index + 1) * 10}',
+                style: const TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+  Widget _buildHistoricoMensal() {
     return ListView.builder(
       itemCount: 10,
       itemBuilder: (context, index) {
