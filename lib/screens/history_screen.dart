@@ -135,15 +135,17 @@ class _HistoryScreenState extends State<HistoryScreen>
     return ListView.builder(
       itemCount: 1,
       itemBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 8,
+        return Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(8),
+            border: Border.all(color: Colors.black, width: 2),
           ),
+          padding: EdgeInsets.all(8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
+              Text(
                 '01/04/2023',
                 style: TextStyle(
                   fontSize: 16,
@@ -151,13 +153,13 @@ class _HistoryScreenState extends State<HistoryScreen>
               ),
               Text(
                 'Pedido #${index + 1}',
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 16,
                 ),
               ),
               Text(
                 'R\$ ${(index + 1) * 10}',
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 16,
                 ),
               ),
@@ -171,15 +173,17 @@ class _HistoryScreenState extends State<HistoryScreen>
     return ListView.builder(
       itemCount: 4,
       itemBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 8,
+        return Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(8),
+            border: Border.all(color: Colors.black, width: 2),
           ),
+          padding: EdgeInsets.all(8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
+              Text(
                 '01/04/2023',
                 style: TextStyle(
                   fontSize: 16,
@@ -187,13 +191,13 @@ class _HistoryScreenState extends State<HistoryScreen>
               ),
               Text(
                 'Pedido #${index + 1}',
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 16,
                 ),
               ),
               Text(
                 'R\$ ${(index + 1) * 10}',
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 16,
                 ),
               ),
@@ -207,15 +211,17 @@ class _HistoryScreenState extends State<HistoryScreen>
     return ListView.builder(
       itemCount: 10,
       itemBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 8,
+        return Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(8),
+            border: Border.all(color: Colors.black, width: 2),
           ),
+          padding: EdgeInsets.all(8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
+              Text(
                 '01/04/2023',
                 style: TextStyle(
                   fontSize: 16,
@@ -223,13 +229,13 @@ class _HistoryScreenState extends State<HistoryScreen>
               ),
               Text(
                 'Pedido #${index + 1}',
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 16,
                 ),
               ),
               Text(
                 'R\$ ${(index + 1) * 10}',
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 16,
                 ),
               ),
