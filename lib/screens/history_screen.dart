@@ -66,18 +66,19 @@ class _HistoryScreenState extends State<HistoryScreen>
           const SizedBox(
             height: 16,
           ),
+          //TabBar 
           SizedBox(
             height: 40,
             child: TabBar(
               controller: _tabController,
-              labelColor: Colors.black,
-              unselectedLabelColor: Colors.grey,
+              labelColor: Colors.black, //Cor de aba selecionada
+              unselectedLabelColor: Colors.grey, //Cor de aba não selecionada
               indicator: BoxDecoration(
                 color: const Color(0xFF49B417),
                 borderRadius: BorderRadius.circular(8),
               ),
-              tabs: [
-                const Tab (
+              tabs: const [
+                Tab (
                   child: SizedBox(
                     width: double.infinity,
                     child: Center(
@@ -89,7 +90,7 @@ class _HistoryScreenState extends State<HistoryScreen>
                     ),
                   ),
                 ),
-                const Tab(
+                Tab(
                   child: SizedBox(
                     width: double.infinity,
                     child: Center(
@@ -102,9 +103,9 @@ class _HistoryScreenState extends State<HistoryScreen>
                   ),
                 ),
                 Tab(
-                  child: Container(
+                  child: SizedBox(
                     width: double.infinity,
-                    child: const Center(
+                    child: Center(
                       child: Text('MENSAL',
                         style: TextStyle(
                           fontWeight: FontWeight.w700
@@ -117,7 +118,7 @@ class _HistoryScreenState extends State<HistoryScreen>
             ),
           ),
           Expanded(
-            child: TabBarView(
+            child: TabBarView(  //Contrução dos históricos
               controller: _tabController,
               children: [
                 _buildHistoricoDiario(),
@@ -141,11 +142,11 @@ class _HistoryScreenState extends State<HistoryScreen>
             borderRadius: BorderRadius.circular(8),
             border: Border.all(color: Colors.black, width: 2),
           ),
-          padding: EdgeInsets.all(8),
+          padding: const EdgeInsets.all(8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 '01/04/2023',
                 style: TextStyle(
                   fontSize: 16,
@@ -153,13 +154,13 @@ class _HistoryScreenState extends State<HistoryScreen>
               ),
               Text(
                 'Pedido #${index + 1}',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                 ),
               ),
               Text(
                 'R\$ ${(index + 1) * 10}',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                 ),
               ),
@@ -179,11 +180,11 @@ class _HistoryScreenState extends State<HistoryScreen>
             borderRadius: BorderRadius.circular(8),
             border: Border.all(color: Colors.black, width: 2),
           ),
-          padding: EdgeInsets.all(8),
+          padding: const EdgeInsets.all(8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 '01/04/2023',
                 style: TextStyle(
                   fontSize: 16,
@@ -191,13 +192,13 @@ class _HistoryScreenState extends State<HistoryScreen>
               ),
               Text(
                 'Pedido #${index + 1}',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                 ),
               ),
               Text(
                 'R\$ ${(index + 1) * 10}',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                 ),
               ),
@@ -217,11 +218,11 @@ class _HistoryScreenState extends State<HistoryScreen>
             borderRadius: BorderRadius.circular(8),
             border: Border.all(color: Colors.black, width: 2),
           ),
-          padding: EdgeInsets.all(8),
+          padding: const EdgeInsets.all(8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 '01/04/2023',
                 style: TextStyle(
                   fontSize: 16,
@@ -229,13 +230,13 @@ class _HistoryScreenState extends State<HistoryScreen>
               ),
               Text(
                 'Pedido #${index + 1}',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                 ),
               ),
               Text(
                 'R\$ ${(index + 1) * 10}',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                 ),
               ),
