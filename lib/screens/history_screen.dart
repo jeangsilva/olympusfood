@@ -142,9 +142,9 @@ class _HistoryScreenState extends State<HistoryScreen>
       itemCount: 1,
       itemBuilder: (context, index) {
         return Padding(
-          padding: const EdgeInsets.all(8),
+          padding: const EdgeInsets.symmetric(horizontal: 8),
           child: Container(
-            height: 90,
+            height: 95,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(8),
@@ -154,12 +154,32 @@ class _HistoryScreenState extends State<HistoryScreen>
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
-                  '01/04/2023',
-                  style: TextStyle(
-                    fontSize: 16,
-                  ),
+                Column(
+                  children: [ 
+                    const Text(
+                      'FEV',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.grey,
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
+                    Text(
+                      '${index + 1}',
+                      style: const TextStyle(
+                        fontSize: 22,
+                        color: Colors.grey,
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
+                  ]
                 ),
+                // const Text(
+                //   '01/04/2023',
+                //   style: TextStyle(
+                //     fontSize: 16,
+                //   ),
+                // ),
                 Text(
                   'Pedido #${index + 1}',
                   style: const TextStyle(
@@ -187,7 +207,7 @@ class _HistoryScreenState extends State<HistoryScreen>
         return Padding(
           padding: const EdgeInsets.all(8),
           child: Container(
-            height: 90,
+            height: 95,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(8),
@@ -197,11 +217,25 @@ class _HistoryScreenState extends State<HistoryScreen>
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
-                  '01/04/2023',
-                  style: TextStyle(
-                    fontSize: 16,
-                  ),
+                Column(
+                  children: [ 
+                    const Text(
+                      'FEV',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.grey,
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
+                    Text(
+                      '${index + 1}',
+                      style: const TextStyle(
+                        fontSize: 22,
+                        color: Colors.grey,
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
+                  ]
                 ),
                 Text(
                   'Pedido #${index + 1}',
@@ -230,7 +264,7 @@ class _HistoryScreenState extends State<HistoryScreen>
         return Padding(
           padding: const EdgeInsets.all(8),
           child: Container(
-            height: 90,
+            height: 95,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(8),
@@ -240,11 +274,25 @@ class _HistoryScreenState extends State<HistoryScreen>
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
-                  '01/04/2023',
-                  style: TextStyle(
-                    fontSize: 16,
-                  ),
+                Column(
+                  children: [ 
+                    const Text(
+                      'FEV',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.grey,
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
+                    Text(
+                      '${index + 1}',
+                      style: const TextStyle(
+                        fontSize: 22,
+                        color: Colors.grey,
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
+                  ]
                 ),
                 Text(
                   'Pedido #${index + 1}',
