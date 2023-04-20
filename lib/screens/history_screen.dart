@@ -11,6 +11,8 @@ class HistoryScreen extends StatefulWidget {
 class _HistoryScreenState extends State<HistoryScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  
+  int startIndex = 10;
 
   @override
   void initState() {
@@ -143,56 +145,64 @@ class _HistoryScreenState extends State<HistoryScreen>
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8),
-          child: Container(
-            height: 95,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(8),
-              border: Border.all(color: Colors.black, width: 2),
-            ),
-            padding: const EdgeInsets.all(20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  children: [ 
-                    const Text(
-                      'FEV',
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold
-                      ),
-                    ),
-                    Text(
-                      '${index + 1}',
-                      style: const TextStyle(
-                        fontSize: 22,
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold
-                      ),
-                    ),
-                  ]
-                ),
-                // const Text(
-                //   '01/04/2023',
-                //   style: TextStyle(
-                //     fontSize: 16,
-                //   ),
-                // ),
-                Text(
-                  'Pedido #${index + 1}',
-                  style: const TextStyle(
-                    fontSize: 16,
+          //modal de histórico
+          child: InkWell(
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (context) => const AlertDialog(
+                  title: Center(
+                    child: Text('COMPROVANTE'), 
                   ),
+                  content: Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'),
                 ),
-                Text(
-                  'R\$ ${(index + 1) * 10}',
-                  style: const TextStyle(
-                    fontSize: 16,
+              );
+            },
+            child: Container(
+              height: 95,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Colors.black, width: 2),
+              ),
+              padding: const EdgeInsets.all(20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    children: [ 
+                      const Text(
+                        'FEV',
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                      Text(
+                        '${startIndex - index}',
+                        style: const TextStyle(
+                          fontSize: 22,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                    ]
                   ),
-                ),
-              ],
+                  Text(
+                    'Pedido #${startIndex - index}',
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  Text(
+                    'R\$ ${(index + 1) * 10}',
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         );
@@ -206,50 +216,64 @@ class _HistoryScreenState extends State<HistoryScreen>
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.all(8),
-          child: Container(
-            height: 95,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(8),
-              border: Border.all(color: Colors.black, width: 2),
-            ),
-            padding: const EdgeInsets.all(20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  children: [ 
-                    const Text(
-                      'FEV',
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold
-                      ),
-                    ),
-                    Text(
-                      '${index + 1}',
-                      style: const TextStyle(
-                        fontSize: 22,
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold
-                      ),
-                    ),
-                  ]
-                ),
-                Text(
-                  'Pedido #${index + 1}',
-                  style: const TextStyle(
-                    fontSize: 16,
+          //modal de histórico 
+          child: InkWell(
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (context) => const AlertDialog(
+                  title: Center(
+                    child: Text('COMPROVANTE'), 
                   ),
+                  content: Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'),
                 ),
-                Text(
-                  'R\$ ${(index + 1) * 10}',
-                  style: const TextStyle(
-                    fontSize: 16,
+              );
+            },
+            child: Container(
+              height: 95,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Colors.black, width: 2),
+              ),
+              padding: const EdgeInsets.all(20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    children: [ 
+                      const Text(
+                        'FEV',
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                      Text(
+                        '${startIndex - index}',
+                        style: const TextStyle(
+                          fontSize: 22,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                    ]
                   ),
-                ),
-              ],
+                  Text(
+                    'Pedido #${startIndex - index}}',
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  Text(
+                    'R\$ ${(index + 1) * 10}',
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         );
@@ -263,50 +287,64 @@ class _HistoryScreenState extends State<HistoryScreen>
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.all(8),
-          child: Container(
-            height: 95,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(8),
-              border: Border.all(color: Colors.black, width: 2),
-            ),
-            padding: const EdgeInsets.all(20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  children: [ 
-                    const Text(
-                      'FEV',
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold
-                      ),
-                    ),
-                    Text(
-                      '${index + 1}',
-                      style: const TextStyle(
-                        fontSize: 22,
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold
-                      ),
-                    ),
-                  ]
-                ),
-                Text(
-                  'Pedido #${index + 1}',
-                  style: const TextStyle(
-                    fontSize: 16,
+          //modal de histórico
+          child: InkWell(
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (context) => const AlertDialog(
+                  title: Center(
+                    child: Text('COMPROVANTE'), 
                   ),
+                  content: Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'),
                 ),
-                Text(
-                  'R\$ ${(index + 1) * 10}',
-                  style: const TextStyle(
-                    fontSize: 16,
+              );
+            },
+            child: Container(
+              height: 95,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Colors.black, width: 2),
+              ),
+              padding: const EdgeInsets.all(20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    children: [ 
+                      const Text(
+                        'FEV',
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                      Text(
+                        '${startIndex - index}',
+                        style: const TextStyle(
+                          fontSize: 22,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                    ]
                   ),
-                ),
-              ],
+                  Text(
+                    'Pedido #${startIndex - index}',
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  Text(
+                    'R\$ ${(index + 1) * 10}',
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         );
