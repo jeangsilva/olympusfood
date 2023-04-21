@@ -1,6 +1,7 @@
 import 'package:olympusfood/screens/navigation.dart';
 import 'package:page_indicator/page_indicator.dart';
 import 'package:flutter/material.dart';
+import 'carteira_screen.dart';
 import 'history_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -71,7 +72,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Row(
                       children: [
                         Column(
-                          //teste
                           children: const [
                             SizedBox(height: 30),
                             CircleAvatar(
@@ -421,7 +421,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       Expanded(
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const CarteiraScreen()),
+                            );
+                          },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color.fromARGB(255, 197, 191, 191),
                             shape: RoundedRectangleBorder(
