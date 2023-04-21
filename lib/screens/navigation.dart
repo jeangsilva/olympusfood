@@ -15,8 +15,8 @@ class _NavigationState extends State<Navigation> {
   build(BuildContext context) {
     return BottomAppBar(
       height: 70,
-      shape: CircularNotchedRectangle(),
-      color: Color(0xFF49B417),
+      shape: const CircularNotchedRectangle(),
+      color: const Color(0xFF49B417),
       elevation: 0,
       child: Stack(
         alignment: Alignment.center,
@@ -75,7 +75,7 @@ class _NavigationState extends State<Navigation> {
             ],
           ),
           Transform.translate(
-            offset: const Offset(0, -35), // move o botão para cima
+            offset: const Offset(0, -35), // move o botão para o lado e cima/baixo
             child: ElevatedButton(
               onPressed: () {
                 
@@ -87,7 +87,7 @@ class _NavigationState extends State<Navigation> {
                     const Size(60, 60), // Define um tamanho fixo para o botão
               ),
               child: Transform.translate(
-                offset: const Offset(-18, -3),
+                offset: const Offset(-16, -3), // move o botão para o lado e cima/baixo
                 child: const Icon(
                   Icons.monetization_on_outlined,
                   size: 65,

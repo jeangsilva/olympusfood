@@ -13,7 +13,7 @@ class _CarteiraScreenState extends State<CarteiraScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Navigation(),
+      bottomNavigationBar: const Navigation(),
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
