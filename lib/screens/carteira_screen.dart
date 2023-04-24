@@ -18,13 +18,42 @@ class _CarteiraScreenState extends State<CarteiraScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            Container(height: 200,
+            Container(
+              height: 300,
               decoration: const BoxDecoration(
                 color: Color.fromARGB(255, 73, 180, 23),
                 borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(30),
+                  bottomRight: Radius.circular(50),
+                  bottomLeft: Radius.circular(50),
                 ),
               ),
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  children: [
+                    const SizedBox(height: 25),
+                    Container(
+                      height: 40,
+                      width: double.infinity,
+                      decoration: const BoxDecoration(
+                        color: Color.fromARGB(255, 166, 42, 42)
+                      ),
+                      child: const Center(
+                        child: Text('ESCOLA RAIO DE SOL')
+                      ) 
+                    ),
+                    SizedBox(
+                      height: 80,
+                      width: double.infinity,
+                      child: Image.network(
+                        'https://picsum.photos/200',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ],
+                ),
+              )
+              
             ),
           ],
         )

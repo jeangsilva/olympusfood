@@ -87,7 +87,7 @@ class _NavigationState extends State<Navigation> {
                     const Size(60, 60), // Define um tamanho fixo para o botão
               ),
               child: Transform.translate(
-                offset: const Offset(-16, -3), // move o botão para o lado e cima/baixo
+                offset: const Offset(-18, -3), // move o botão para o lado e cima/baixo
                 child: const Icon(
                   Icons.monetization_on_outlined,
                   size: 65,
