@@ -230,11 +230,19 @@ class _HistoryScreenState extends State<HistoryScreen>
             onTap: () {
               showDialog(
                 context: context,
-                builder: (context) => const AlertDialog(
-                  title: Center(
+                builder: (context) => AlertDialog(
+                  title: const Center(
                     child: Text('COMPROVANTE'), 
                   ),
-                  content: Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'),
+                  content: const Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'),
+                  actions: [
+                    TextButton( // botão que fecha o modal
+                      onPressed: () => Navigator.pop(context),
+                      child: const Center (
+                        child: Text('Fechar'),
+                      ),
+                    ),
+                  ],
                 ),
               );
             },
@@ -270,7 +278,7 @@ class _HistoryScreenState extends State<HistoryScreen>
                     ]
                   ),
                   Text(
-                    'Pedido #${startIndex - index}}',
+                    'Pedido #${startIndex - index}',
                     style: const TextStyle(
                       fontSize: 16,
                     ),
@@ -301,11 +309,19 @@ class _HistoryScreenState extends State<HistoryScreen>
             onTap: () {
               showDialog(
                 context: context,
-                builder: (context) => const AlertDialog(
-                  title: Center(
+                builder: (context) => AlertDialog(
+                  title: const Center(
                     child: Text('COMPROVANTE'), 
                   ),
-                  content: Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'),
+                  content: const Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'),
+                  actions: [
+                    TextButton( // botão que fecha o modal
+                      onPressed: () => Navigator.pop(context),
+                      child: const Center (
+                        child: Text('Fechar'),
+                      ),
+                    ),
+                  ],
                 ),
               );
             },
