@@ -19,12 +19,12 @@ class _CarteiraScreenState extends State<CarteiraScreen> {
         child: Column(
           children: [
             Container(
-              height: 300,
+              height: 380,
               decoration: const BoxDecoration(
                 color: Color.fromARGB(255, 73, 180, 23),
                 borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(50),
-                  bottomLeft: Radius.circular(50),
+                  bottomRight: Radius.circular(90),
+                  bottomLeft: Radius.circular(90),
                 ),
               ),
               child: Padding(
@@ -66,7 +66,7 @@ class _CarteiraScreenState extends State<CarteiraScreen> {
                       ),
                     ),
                     Transform.translate(
-                      offset: const Offset(0, -40),
+                      offset: const Offset(0, -40), //subindo a imagem
                       child: const CircleAvatar(
                         radius: 40,
                         backgroundImage: NetworkImage(
@@ -75,26 +75,77 @@ class _CarteiraScreenState extends State<CarteiraScreen> {
                     ),
                     Center(
                       child: Column(
-                        children: const [
-                          Text('Maria Clara Campos',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
+                        children: [
+                          Transform.translate(
+                            offset: const Offset(0, -30), //subindo o texto
+                            child: Column(
+                              children: const [
+                                Text(
+                                  'Maria Clara Campos',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                Text(
+                                  'Estudante',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                          Text('Estudante',
-                            style: TextStyle(
-                              fontSize: 14
-                            ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Column(
+                                children: const [
+                                  Text(
+                                    'Saldo total',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text(
+                                    'R\$ 120,00',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 22,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                children: const [
+                                  Text(
+                                    'Limite diário',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text(
+                                    'R\$ 20,00',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 22,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
                         ],
                       ),
                     )
                   ],
                 ),
-              )
-              
+              ) 
             ),
           ],
         )
